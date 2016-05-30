@@ -1,0 +1,864 @@
+library pgraph;
+
+
+
+screen off;
+
+output file=asstB.res reset;
+outwidth 256;
+format /rd 10,4;
+/*IMPORTANT - Sample Size: Daily=1258, Weekly=262, Monthly=60*/
+
+lags=10;
+
+
+
+y=filesa("*csv");
+y_rows= ROWS(y);
+
+
+daily_matrix=zeros((y_rows/3),7);
+weekly_matrix=zeros((y_rows/3),7);
+monthly_matrix=zeros((y_rows/3),7);
+monthly_i=1;
+weekly_i=1;
+daily_i=1;
+
+
+/*creating a matrix of returns for daily, weekly and monthly data*/
+mor_d=zeros(1247,(y_rows/3));
+mor_w=zeros(251,(y_rows/3));
+mor_m=zeros(49,(y_rows/3));
+
+
+file_count=1;
+do until file_count>y_rows;
+
+
+file_name=y[file_count,1];
+
+
+/*loading the data set as a single string*/
+load data[]= ^file_name;
+T= rows(data)/8-1;
+
+
+/*Transforming the single string data set into a proper (T+1) by 8 data set*/
+
+data1=reshape(data,(T+1),8);
+
+
+
+/*Assigning the 'adjusted close' data - the data to be worked with*/
+adjclose= data1[(T+1):2,8];
+/*Fixing the Irrational number error when loading raw data from Yahoo finance*/
+adjclose=abs(adjclose);
+
+logclose=ln(adjclose); 
+
+/*net and log of return #ofreturns x 1 matrices*/
+
+net_ret=(adjclose[2:T,1]-adjclose[1:(T-1),1])./adjclose[1:(T-1),1];
+log_ret=logclose[2:T,1]-logclose[1:(T-1),1]; 
+
+
+
+
+
+
+
+
+/*Means, Variance, Skewness, Kurtosis for Normality Test*/
+
+mean=meanc(net_ret);
+variance=vcx(net_ret);
+
+log_mean=meanc(log_ret);
+log_variance=vcx(log_ret);
+
+
+sumcubed=0;
+sumquad=0;
+logsumcubed=0;
+logsumquad=0;
+
+
+
+i=1;
+do until i>(T-1);
+	
+	sumcubed=sumcubed+(net_ret[i,.]-mean)^3;
+	sumquad=sumquad+(net_ret[i,.]-mean)^4;
+
+	logsumcubed=logsumcubed+(log_ret[i,.]-log_mean)^3;
+	logsumquad=logsumquad+(log_ret[i,.]-log_mean)^4;
+
+	
+
+i=i+1;
+endo;
+
+
+
+
+
+
+
+/*Net Results - Normality Test*/
+
+skewness=sumcubed/((T-1)*(variance^(3/2)));
+kurtosis=sumquad/((T-1)*(variance^2));
+JB=((T-1)/6)*(skewness^2+((kurtosis-3)^2)/4);
+
+if JB < 5.99;
+normality = "pass";
+else;
+normality = "fail";
+endif;
+
+
+/*Log Results - Normality Test*/
+
+log_skewness=logsumcubed/((T-1)*log_variance^(3/2));
+log_kurtosis=logsumquad/((T-1)*log_variance^2);
+log_JB=(T-1)*(log_skewness^2+((log_kurtosis-3)^2)/4)/6;
+
+if log_JB < 5.99;
+log_normality = "pass";
+else;
+log_normality = "fail";
+endif;
+
+/*Random Walk 1:*/
+
+
+/*Creating a 1247x11 matrix of returns rt, rt-1,..., rt-10*/
+r_matrix=zeros(T-(lags+1),(lags+1));
+m=1;
+do until m>(lags+1);
+	r_matrix[.,m]=log_ret[(12-m):(T-m),1];
+	m=m+1;
+endo;
+
+
+
+cov_matrix=vcx(r_matrix);
+
+
+
+/*Making a 10x1 matrix of Pearson Coefficient Values:*/
+
+p_matrix=zeros(lags,1);
+z_matrix=zeros(lags,1);
+f=1;
+do until f>lags;
+	p_matrix[f,1]=cov_matrix[1,(f+1)]/(cov_matrix[1,1]^(1/2)*cov_matrix[(f+1),(f+1)]^(1/2));
+	z_matrix[f,1]=p_matrix[f,1]/((1/(T-11))^(1/2));
+	f=f+1;
+endo;
+
+
+
+
+/*Box-Pierce Q-statistic*/
+
+Qm=zeros(lags,1);
+Qm_counter=1;
+do until Qm_counter>lags;
+	i=1;
+	do until i>Qm_counter;
+		Qm[Qm_counter,1]=Qm[Qm_counter,1]+((T-11)*(p_matrix[i,1]^2));
+		i=i+1;
+	endo;
+	Qm_counter=Qm_counter+1;
+endo;
+
+/*RW3 Testing*/
+
+VR=zeros((lags),1)+1;
+
+
+q=1;
+do until q>(lags);
+
+	k=1;
+	do until k>(q-1);
+		VR[q,1]=VR[q,1]+2*(1-(k/(q-1)))*p_matrix[k,1];
+		k=k+1;
+	endo;
+	q=q+1;
+endo;
+
+
+
+
+
+
+/* SD for VR... NOTE: k = q-1*/
+
+gamma_tot = zeros((lags-1),1);
+gamma_top = zeros((lags-1),1);
+gamma_bottom = zeros((lags-1),1);
+
+log_mean2=meanc(log_ret[1:(T-1),1]);
+
+
+k=1;
+do until k>(lags-1);
+
+	j=(k+1);
+	do until j>(T-1);
+		gamma_top[k,1]=gamma_top[k,1]+(T-1)*((log_ret[j,1]-log_mean2)^2*(log_ret[(j-k),1]-log_mean2)^2);
+		j=j+1;
+	endo;
+
+	j=1;
+	do until j>(T-1);
+		gamma_bottom[k,1]=gamma_bottom[k,1]+(log_ret[j,1]-log_mean2)^2;
+		j=j+1;
+	endo;
+	
+	k=k+1;
+
+endo;	
+
+gamma_tot=gamma_top./(gamma_bottom^2);
+
+theta=zeros((lags),1);
+
+q=1;
+do until q>(lags);
+	k=1;
+	do until k>(q-1);
+		theta[q,1]=theta[q,1]+gamma_tot[k,1]*(2*(1-(k/q)))^2;
+		k=k+1;
+	endo;
+	q=q+1;
+endo;
+
+standardized=((T-1)^(1/2))*(VR[3:lags,1]-1)./(theta[2:(lags-1)]^(1/2));
+
+
+RW3_test=zeros((lags-2),2);
+i=1;
+do until i>(lags-2);
+	if (standardized[i,1]^2)^(1/2)>1.96;
+		RW3_test[i,1]="Reject";
+        RW3_test[i,2]=1;
+	else;
+		RW3_test[i,1]="RW3";
+        RW3_test[i,2]=0;
+	endif;
+i=i+1;
+endo;
+
+/*Forecast Predictability based on VR result*/
+i=1;
+predictability=0;
+do until i>(lags-2);
+    if RW3_test[i,2]>0;
+        predictability=i;        
+    endif;
+i=i+1;
+endo;
+
+/*Assign returns based on predictability*/
+
+/*filling in the matrix of returns for daily, weekly and monthly data*/
+
+
+
+
+rt_plus1=zeros((T-lags-1),1);
+i=1;
+do until i>(T-lags-1);
+      rt_plus1[i,1]=meanc(log_ret[i:(i+lags),1]);
+      i=i+1;
+endo;
+
+
+
+
+
+//ret_reg_mat=zeros((T-lags*2-1,(predictability+1)));
+
+rt=zeros((T-lags-1),lags);
+if predictability>0;
+
+i=1;
+do until i>lags;
+    rt[.,i]=log_ret[i:(T-1-(lags+1)+i),1];
+    i=i+1;
+endo;
+
+    reg_x=zeros((T-lags-1),predictability);
+    reg_y=rt[.,2];
+    i=1;
+    do until i>(predictability);
+        reg_x[.,i]=rt[.,(i+2)];
+        i=i+1;
+    endo;
+
+    { vnam, m, b, stb,
+      vc, stderr, sigma,
+      cx, rsq, resid, dwstat } = ols(0,reg_y,reg_x);
+
+    i=1;
+    rt[.,1]=zeros(T-lags-1,1);
+    rt[.,1]=rt[.,1]+b[1,1];
+    do until i>predictability;
+      rt[.,1]=rt[.,1]+rt[.,(i+1)].*b[(i+1),1];
+      i=i+1;
+    endo;
+    
+endif;
+
+
+
+rt_plus1[.,1]=exp(rt_plus1)-1;
+//rt_plus1[.,1]=rt_plus1[.,1].*100;
+mean1=meanc(rt_plus1[.,1]);
+
+if predictability>0;
+    rt_plus1[.,1]=exp(rt[.,1])-1;
+    rt1=meanc(rt[.,1]);
+    rt1=exp(rt1)-1;
+else;
+    rt1=mean1;
+endif;
+
+
+
+if T<100;
+    mor_m[.,monthly_i]=rt_plus1[.,1];
+elseif T>400;
+    mor_d[.,daily_i]=rt_plus1[.,1];
+else;
+    mor_w[.,weekly_i]=rt_plus1[.,1];
+endif;
+
+
+
+
+
+/*
+
+
+    
+
+
+
+
+    rt1=log_mean;
+     rt1=rt1+sumc(p_matrix[1:predictability,1].*log_ret[1:predictability,1]);
+     rt1=exp(rt1)-1;
+
+
+
+
+
+
+else;
+    rt1=mean;
+
+*/
+
+
+
+/*
+print "----------------------------------------------------------------------------------------------------------------------------";
+print "----------------------------------------------------------------------------------------------------------------------------";
+print "Stock		- " y[file_count,1];
+print "Observations	- " (T-1);
+print "----------------------------------------------------------------------------------------------------------------------------";
+print;
+print "General Stats:";
+print "     Mean        STD    JB-Stat   Normality  Log Mean   Log STD   Log JB-Stat   Log Normality";
+print mean (variance^(1/2)) JB "    " normality " " log_mean (log_variance^(1/2)) "  " log_JB "        "   log_normality;
+print "----------------------------------------------------------------------------------------------------------------------------";
+print;
+print "Pearson Auto-correlation Coefficients:";
+print "----------------------------------------------------------------------------------------------------------------------------";
+print "                1         2          3          4          5          6          7          8          9          10";
+print "----------------------------------------------------------------------------------------------------------------------------";
+print "Pearson: " p_matrix';
+print "Z-stat:  " z_matrix';
+print "Qm:      " Qm';
+print "----------------------------------------------------------------------------------------------------------------------------";
+print "    	       1          2          3          4          5          6          7          8          9 ";
+print "----------------------------------------------------------------------------------------------------------------------------";
+print "Delta:   " gamma_tot';
+print "----------------------------------------------------------------------------------------------------------------------------";
+print "     	       2          3          4          5          6          7          8          9";
+print "----------------------------------------------------------------------------------------------------------------------------";
+print "VR:      " VR[3:lags,1]';
+print "Theta:   " theta[2:(lags-1),1]';
+print "psi:     " standardized';
+print;
+print "RW3 Test: " $RW3_test'; 
+print "----------------------------------------------------------------------------------------------------------------------------";
+print "----------------------------------------------------------------------------------------------------------------------------";
+*/
+
+
+
+if T<100;
+monthly_matrix[monthly_i,1]=file_count;
+monthly_matrix[monthly_i,2]=file_name;
+monthly_matrix[monthly_i,3]="Monthly";
+monthly_matrix[monthly_i,4]=3;
+monthly_matrix[monthly_i,5]=rt1;
+monthly_matrix[monthly_i,6]=predictability;
+monthly_matrix[monthly_i,7]=mean1;
+monthly_i=monthly_i+1;
+
+elseif T>499;
+daily_matrix[daily_i,1]=file_count;    
+daily_matrix[daily_i,2]=file_name;
+daily_matrix[daily_i,3]="Daily";
+daily_matrix[daily_i,4]=1;
+daily_matrix[daily_i,5]=rt1;
+daily_matrix[daily_i,6]=predictability;
+daily_matrix[daily_i,7]=mean1;
+daily_i=daily_i+1;
+else;
+weekly_matrix[weekly_i,1]=file_count;    
+weekly_matrix[weekly_i,2]=file_name;
+weekly_matrix[weekly_i,3]="Weekly";
+weekly_matrix[weekly_i,4]=2;
+weekly_matrix[weekly_i,5]=rt1;
+weekly_matrix[weekly_i,6]=predictability;
+weekly_matrix[weekly_i,7]=mean1;
+weekly_i=weekly_i+1;
+endif;
+
+
+file_count=file_count+1;
+endo;
+/*End of single file parsing*/
+/*Start of portfolio building*/
+
+oldfmt = formatnv("*.*lf" ~ 8 ~ 4);
+
+
+
+let mask[1,7]= 1 0 0 1 1 1 1;
+d=printfmt(daily_matrix,mask);
+print;
+d=printfmt(weekly_matrix,mask);
+print;
+d=printfmt(monthly_matrix,mask);
+print;
+
+call formatnv(oldfmt);
+
+
+
+
+/*Exercise 1: E[Zi]=mean*/  
+/*Reminder: mor_w, mor_m, mor_d for Matrix of net Returns - with different frequencies*/
+
+
+
+/*Risk Free Returns: Daily, Weekly, Monthly*/
+rf_d=1.017^(1/260)-1;
+rf_w=1.017^(1/52)-1;
+rf_m=1.017^(1/12)-1;
+
+
+/*------------------------------------------------------------*/
+/*                        Daily:                              */
+/*------------------------------------------------------------*/
+Y=(1.2);
+X=(1);
+daily_Y=zeros(15,4);
+g=1;
+do until g>15;
+
+
+
+
+/*Inverse of the Variance/covariance Matrix*/
+v_ij=vcx(mor_d);
+//print v_ij;
+v_ij=inv(v_ij);
+//print v_ij;
+
+Wpi=zeros((daily_i-1),1);
+a=zeros((daily_i-1),1);
+b=zeros((daily_i-1),1);
+c=zeros((daily_i-1),1);
+/*Weight of stock i in portfolio p Wpi*/
+i=1;
+do until i>(daily_i-1);
+    j=1;
+    do until j>(daily_i-1);
+        Wpi[i,1]=Wpi[i,1]+ v_ij[i,j]*(daily_matrix[j,5]-rf_d);
+        a[i,1]=a[i,1]+v_ij[i,j]*(daily_matrix[j,5]);
+        b[i,1]=b[i,1]+v_ij[i,j]*(daily_matrix[j,5])*(daily_matrix[i,5]);
+        c[i,1]=c[i,1]+v_ij[i,j];
+        
+        j=j+1;
+    endo;
+    i=i+1;
+endo;
+i=1;
+positive_sum=0;
+negative_sum=0;
+do until i>rows(Wpi);
+    if Wpi[i,1]>0;
+        positive_sum=positive_sum+Wpi[i,1];
+    else;
+        negative_sum=negative_sum+Wpi[i,1];
+
+    endif;
+    
+
+    i=i+1;
+endo;
+
+
+
+a=sumc(a);
+b=sumc(b);
+c=sumc(c);
+/*
+print "a b c: " a b c;
+*/
+/*RRA*/
+/*Calculating Theta for the RRA*/
+
+
+//rra_graph=zeros(15,3);
+/*
+i=1;
+do until Y>6;
+*/
+/*Solving for E_m = E[Zp] and then sub it in to solve for Theta  */
+D=(c*rf_d^2-2*a*rf_d+b);
+
+
+E= (rf_d+(Y/X)*D-D)/(1+D);
+theta_k=2*(Y-X*(1+E))/X;
+
+/*
+print "D=(c*rf_d^2-2*a*rf_d+b); " D;
+print "F=(Y-X)*D/X;" F;
+print "E=F/(1-F);" E;
+*/
+
+/*Solving for Weight of Risk Free Asset, E[Zp*], Var[P*] and RRA associated with them*/
+Wp0=1-(theta_k/2)*(a-c*rf_d);
+epr=rf_d+(theta_k/2)*D;
+varp=(theta_k/2)^2*D;
+RRA=(X*(1+epr))/(Y-X*(1+epr));
+
+/*
+rra_graph[i,1]=RRA;
+rra_graph[i,2]=epr;
+rra_graph[i,3]=varp;
+*/
+
+/*
+print;
+
+
+
+
+print D_m F_m E_m theta_k_m;
+*/
+
+print "-------------------------------------------------------------------------";
+print "Daily:";
+print "+ve" positive_sum*(theta_k/2);
+print "-ve" negative_sum*(theta_k/2);
+print "Risky Asset Weights: " Wpi'.*(theta_k/2);
+print;
+print "Risky Sum: " sumc(Wpi.*(theta_k/2));
+print "Risk Free: " Wp0;
+print;
+print "a b c: " a b c;
+print "D E" D E;
+print "Theta:     " theta_k;
+print "E[Zp]=   " epr;
+print "Var[Zp]= " varp;
+print "RRA =    " RRA;
+print;
+
+/*
+Y=Y+0.2;
+X=X+0.3;
+i=i+1;
+endo;
+
+print rra_graph[.,1]';
+print rra_graph[.,2]';
+print rra_graph[.,3]';
+
+
+graphset;
+x=rra_graph[.,1];
+y= rra_graph[.,2] ~ rra_graph[.,3];
+xy(x,y);
+
+
+*/
+daily_Y[g,1]=epr;
+daily_Y[g,2]=varp;
+daily_Y[g,3]=RRA;
+daily_Y[g,4]=Y;
+Y=Y+0.1;
+g=g+1;
+endo;
+
+print "     E[Zp]      Var[Zp]      RRA       Y";
+print daily_Y;
+
+
+
+
+
+
+
+/*------------------------------------------------------------*/
+/*                        Weekly:                             */
+/*------------------------------------------------------------*/
+Y=(1.5);
+X=(1);
+weekly_Y=zeros(15,4);
+g=1;
+do until g>15;
+
+
+
+v_ij=vcx(mor_w);
+//print v_ij;
+v_ij=inv(v_ij);
+//print v_ij;
+
+Wpi=zeros((weekly_i-1),1);
+a=zeros((weekly_i-1),1);
+b=zeros((weekly_i-1),1);
+c=zeros((weekly_i-1),1);
+/*Weight of stock i in portfolio p Wpi*/
+i=1;
+do until i>(weekly_i-1);
+    j=1;
+    do until j>(weekly_i-1);
+        Wpi[i,1]=Wpi[i,1]+ v_ij[i,j]*(weekly_matrix[j,5]-rf_w);
+        a[i,1]=a[i,1]+v_ij[i,j]*(weekly_matrix[j,5]);
+        b[i,1]=b[i,1]+v_ij[i,j]*(weekly_matrix[j,5])*(weekly_matrix[i,5]);
+        c[i,1]=c[i,1]+v_ij[i,j];
+        
+        j=j+1;
+    endo;
+    i=i+1;
+endo;
+
+a=sumc(a);
+b=sumc(b);
+c=sumc(c);
+/*
+print "a b c: " a b c;
+*/
+/*RRA*/
+/*Calculating Theta for the RRA*/
+
+
+rra_graph=zeros(15,3);
+/*
+i=1;
+do until Y>6;
+*/
+
+/*Solving for E_m = E[Zp] and then sub it in to solve for Theta  */
+D=(c*rf_w^2-2*a*rf_w+b);
+
+E= (rf_w+(Y/X)*D-D)/(1+D);
+theta_k=2*(Y-X*(1+E))/X;
+
+/*
+print "D=(c*rf_d^2-2*a*rf_d+b); " D;
+print "F=(Y-X)*D/X;" F;
+print "E=F/(1-F);" E;
+*/
+
+
+/*Solving for Weight of Risk Free Asset, E[Zp*], Var[P*] and RRA associated with them*/
+Wp0=1-(theta_k/2)*(a-c*rf_w);
+epr=rf_w+(theta_k/2)*D;
+varp=(theta_k/2)^2*D;
+RRA=(X*(1+epr))/(Y-X*(1+epr));
+
+/*
+rra_graph[i,1]=RRA;
+rra_graph[i,2]=epr;
+rra_graph[i,3]=varp;
+*/
+
+/*
+print;
+
+
+
+
+print D_m F_m E_m theta_k_m;
+*/
+
+print "-------------------------------------------------------------------------";
+print "Weekly:";
+print "Risky Asset Weights: " Wpi'.*(theta_k/2);
+print;
+print "Risky Sum: " sumc(Wpi.*(theta_k/2));
+print "Risk Free: " Wp0;
+print;
+print "a b c: " a b c;
+print "D E" D E;
+print "Theta:     " theta_k;
+print "E[Zp]=   " epr;
+print "Var[Zp]= " varp;
+print "RRA =    " RRA;
+print;
+
+/*
+Y=Y+0.2;
+X=X+0.3;
+i=i+1;
+endo;
+*/
+weekly_Y[g,1]=epr;
+weekly_Y[g,2]=varp;
+weekly_Y[g,3]=RRA;
+weekly_Y[g,4]=Y;
+Y=Y+0.2;
+g=g+1;
+endo;
+
+print "     E[Zp]      Var[Zp]      RRA       Y";
+print weekly_Y;
+
+
+
+
+
+
+/*------------------------------------------------------------*/
+/*                        Monthly:                            */
+/*------------------------------------------------------------*/
+Y=(1.5);
+X=(1);
+monthly_Y=zeros(15,4);
+g=1;
+do until g>15;
+
+
+
+
+
+
+v_ij=vcx(mor_m);
+//print v_ij;
+v_ij=inv(v_ij);
+//print v_ij;
+
+Wpi=zeros((monthly_i-1),1);
+a=zeros((monthly_i-1),1);
+b=zeros((monthly_i-1),1);
+c=zeros((monthly_i-1),1);
+/*Weight of stock i in portfolio p Wpi*/
+i=1;
+do until i>(monthly_i-1);
+    j=1;
+    do until j>(monthly_i-1);
+        Wpi[i,1]=Wpi[i,1]+ v_ij[i,j]*(monthly_matrix[j,5]-rf_m);
+        a[i,1]=a[i,1]+v_ij[i,j]*(monthly_matrix[j,5]);
+        b[i,1]=b[i,1]+v_ij[i,j]*(monthly_matrix[j,5])*(monthly_matrix[i,5]);
+        c[i,1]=c[i,1]+v_ij[i,j];
+        
+        j=j+1;
+    endo;
+    i=i+1;
+endo;
+
+a=sumc(a);
+b=sumc(b);
+c=sumc(c);
+/*
+print "a b c: " a b c;
+*/
+/*RRA*/
+/*Calculating Theta for the RRA*/
+
+rra_graph=zeros(15,3);
+/*
+i=1;
+do until Y>6;
+*/
+/*Solving for E_m = E[Zp] and then sub it in to solve for Theta  */
+D=(c*rf_m^2-2*a*rf_m+b);
+
+E= (rf_m+(Y/X)*D-D)/(1+D);
+theta_k=2*(Y-X*(1+E))/X;
+
+/*
+print "D=(c*rf_d^2-2*a*rf_d+b); " D;
+print "F=(Y-X)*D/X;" F;
+print "E=F/(1-F);" E;
+*/
+
+
+/*Solving for Weight of Risk Free Asset, E[Zp*], Var[P*] and RRA associated with them*/
+Wp0=1-(theta_k/2)*(a-c*rf_m);
+epr=rf_m+(theta_k/2)*D;
+varp=(theta_k/2)^2*D;
+RRA=(X*(1+epr))/(Y-X*(1+epr));
+
+/*
+rra_graph[i,1]=RRA;
+rra_graph[i,2]=epr;
+rra_graph[i,3]=varp;
+*/
+
+
+
+
+
+/*
+print "a b c: " a b c;
+print "D F E" D F E;
+*/
+
+print "-------------------------------------------------------------------------";
+print "Monthly:";
+print "Risky Asset Weights: " Wpi'.*(theta_k/2);
+print;
+print "Risky Sum: " sumc(Wpi.*(theta_k/2));
+print "Risk Free: " Wp0;
+print;
+print "a b c: " a b c;
+print "D E" D E;
+print "Theta:     " theta_k;
+print "E[Zp]=   " epr;
+print "Var[Zp]= " varp;
+print "RRA =    " RRA;
+print "-------------------------------------------------------------------------";
+print;
+
+/*
+Y=Y+0.2;
+X=X+0.3;
+i=i+1;
+endo;
+*/
+monthly_Y[g,1]=epr;
+monthly_Y[g,2]=varp;
+monthly_Y[g,3]=RRA;
+monthly_Y[g,4]=Y;
+Y=Y+1;
+g=g+1;
+endo;
+
+print "     E[Zp]      Var[Zp]      RRA       Y";
+print monthly_Y;
+
+

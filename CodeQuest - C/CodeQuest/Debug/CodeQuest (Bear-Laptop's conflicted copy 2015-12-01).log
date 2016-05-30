@@ -1,0 +1,13 @@
+﻿Build started 01/12/2015 11:52:13 AM.
+     1>Project "C:\Dropbox\Dropbox\SENECA\IPC144\C projects\CodeQuest\CodeQuest\CodeQuest\CodeQuest\CodeQuest.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt codequest.c
+         codequest.c
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppCommon.targets(341,5): error MSB6006: "CL.exe" exited with code 2.
+     1>c:\dropbox\dropbox\seneca\ipc144\c projects\codequest\codequest\codequest\codequest\codequest.c : fatal error C1041: cannot open program database 'c:\dropbox\dropbox\seneca\ipc144\c projects\codequest\codequest\codequest\codequest\debug\vc120.idb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+     1>Done Building Project "C:\Dropbox\Dropbox\SENECA\IPC144\C projects\CodeQuest\CodeQuest\CodeQuest\CodeQuest\CodeQuest.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.01

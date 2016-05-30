@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 3 - Index.html - INT222_161b08</title>
+    <link rel="stylesheet" href="css/normalize.css"   type="text/css" media="screen" /> 
+    <link rel="stylesheet" href="css/mortgage.css"     type="text/css" media="screen" />
+	<script  src="javascript/mortgage.js"  type="text/javascript"></script> 
+  </head>
+  <body>
+		<form method="post" id="mortgage" name="mortgage" 
+           action="https://zenit.senecac.on.ca/~emile.ohan/cgi-bin/assign3.cgi" 
+           onsubmit="return formValidation();">
+		<div class='main'>
+			<div class='left_frame'>
+				
+				<p class='blue_shadow'>Mortgage</p>
+				<p class='blue_shadow'>Calculator</p><br />
+				<br /><br />
+				<hr class='red_break' />
+				<br />
+				
+				
+				
+				
+				<br />
+				
+				<input type='button' value='Calculate Monthly Payment'
+					onclick='calculatePayment();' class="green_button" />
+				<br />
+				<p class="bottom0">Monthly Payment</p>
+				<input type="text" name="payment" id="payment" maxlength="8" size="8" readonly="readonly" class="top0 price"/>
+				<br /><br />
+				<input type="submit" value="Submit Request" class="blue_button">
+			</div>
+			<div class='in_main'>
+				<div class='in_frame'>
+					<fieldset>
+						<legend>Personal Information</legend>
+						
+						
+						<div class="no_border">
+							<label for="userId">User Id. </label>
+							<input type="text" name="userId" id="userId" maxlength="10" size="10" class="pi"><br />
+							<label for="client">User Name </label>
+							<input type="text" name="client" id="client"  class="pi"><br />
+							</div>
+					</fieldset>
+					
+					<fieldset>
+						<legend>Financial / Property Information </legend>
+						
+						
+						<div class="no_border">
+							<label for="propValue">Property Value </label>
+							<input type="text" name="propValue" id="propValue" maxlength="6" size="7" class="pi"><br />
+							<label for="downPay">Down Payment </label>
+							<input type="text" name="downPay" id="downPay" maxlength="6" size="7" class="pi"><br />
+							</div>
+							<br />
+						<div class="center">
+						<select id="income" name="income" size="4" >
+							<optgroup label="Income Range">
+							<option value="1">Under 30,000</option>
+							<option value="2">30,001 - 40,000</option>
+							<option value="3">40,001 - 50,000</option>
+							<option value="4">50,001 - 60,000</option>
+							<option value="5">60,001 - 70,000</option>
+							<option value="6">70,001 - 85,000</option>
+							<option value="7">85,001 - 100,000</option>
+							<option value="8">100,001 - 150,000</option>
+							<option value="9">150,001 - 250,000</option>
+							<option value="10">Over 250,000</option>
+						</select>
+						<select id="propLocation" name="propLocation" size="4" class="height70">
+							<optgroup label="Location">
+							<option value="brampton">Brampton</option>
+							<option value="mississauga">Mississauga</option>
+							<option value="scarborough">Scarborough</option>
+							<option value="toronto">Toronto</option>
+							<option value="vaughan">Vaughan</option>
+						</select>
+						</div>
+					</fieldset>
+					
+					<fieldset>
+						
+						<legend>Property Type</legend>
+						<div class="no_border">
+							<input type="radio" name="propDetails" id="propDetails-1" value="detach" class="selection"/> Detached
+							<br />
+							<input type="radio" name="propDetails" id="propDetails-2" value="semi" class="selection"/> Semi Detached
+						</div>
+						<div class="no_border">
+							<input type="radio" name="propDetails" id="propDetails-3" value="town" class="selection"/> Town House
+							<br />
+							<input type="radio" name="propDetails" id="propDetails-4" value="row" class="selection"/> Row House
+						</div>
+						<div class="no_border">
+							<input type="radio" name="propDetails" id="propDetails-5" value="condo" class="selection"/> Condo
+							<br />
+							<input type="radio" name="propDetails" id="propDetails-6" value="vacant" class="selection"/> Vacant Land
+						</div>
+					</fieldset>
+					
+					
+					
+					<fieldset>
+						<legend>Comments</legend>
+						<div class="center pad0">
+						<textarea name="comments" id="comments" rows="2" class="spec"> </textarea>
+						</div>
+					</fieldset>
+				</div>
+				<div class="in_frame" >
+					
+					<fieldset>
+						<legend>Mortgage Details</legend>
+
+					<div class="right_in_frame">
+						<label for="amortization">Amortization </label>
+						<input type="text" name="amortization" id="amortization" maxlength="2" size="3" class="pi"><br />
+						<label for="intRate">Interest Rate </label>
+						<input type="text" name="intRate" id="intRate" maxlength="6" size="7" class="pi"><br />
+						<label for="mortYear">Mortgage Year </label>
+						<input type="text" name="mortYear" id="mortYear" maxlength="4" size="5" class="pi"><br />
+						<label for="mortMonth">Mortgage Month </label>
+						<input type="text" name="mortMonth" id="mortMonth" maxlength="2" size="4" class="pi"><br />
+						
+					
+						<input type="hidden" name="jsActive" id="jsActive" value="N">
+						<input type="hidden" name="lastName" id="lastName" value="Dourasov">
+						<input type="hidden" name="zenitAccount" id="zenitAccount" value="int222_161b08">
+						<input type="hidden" name="studentId" id="studentId" value="106871155">
+					
+					</div>
+					
+					</fieldset>
+					
+					<fieldset class="center max_height" >
+						
+						
+						
+					<div id="errors"></div>
+						
+					</fieldset>
+					
+				</div>
+			</div>
+		</div>
+	</form>
+	
+	<footer>
+	<a href="../">My zenit Account </a>
+	<a href="javascript/mortgage.js">My JavaScript </a>
+	<a href="css/mortgage.css">My CSS </a>
+	<a href="honesty.html">My Honesty</a>
+	<br /><br />
+	<script>
+          var dt=new Date(document.lastModified);   // Get document last modified date
+          document.write('This page was last updated on '+dt.toLocaleString()) ;
+    </script>
+    </footer>
+  </body>
+  
+</html>
