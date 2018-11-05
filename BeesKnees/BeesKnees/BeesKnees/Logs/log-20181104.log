@@ -1,0 +1,76 @@
+2018-11-04T20:33:40.8307019-05:00 0HLI1S1O1IJOH:00000001 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-11-04T20:33:40.8647038-05:00 0HLI1S1O1IJOH:00000001 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-11-04T20:33:40.8667039-05:00 0HLI1S1O1IJOH:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2018-11-04T20:33:40.8727043-05:00 0HLI1S1O1IJOH:00000001 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-11-04T20:33:41.2927283-05:00 0HLI1S1O1IJOH:00000001 [INF] An ad hoc authorization was automatically created and associated with an unknown application: "9b9e40a1-1b57-45f4-b56a-23ed66477b92". (b5fe4ad7)
+2018-11-04T20:33:41.3127294-05:00 0HLI1S1O1IJOH:00000001 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2018-11-04T20:33:41.3147295-05:00 0HLI1S1O1IJOH:00000001 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2018-11-04T20:33:41.3157296-05:00 0HLI1S1O1IJOH:00000001 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2018-11-04T20:33:41.3167297-05:00 0HLI1S1O1IJOH:00000001 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2018-11-04T20:33:41.4027346-05:00 0HLI1S1O1IJOH:00000001 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2018-11-04T20:33:41.4227357-05:00 0HLI1S1O1IJOH:00000001 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-11-04T20:35:17.1352102-05:00 0HLI1S1O1IJOI:00000002 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:17.1352102-05:00 0HLI1S1O1IJOJ:00000002 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:44.7847916-05:00 0HLI1S1O1IJOJ:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:53.4952898-05:00 0HLI1S1O1IJOJ:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:53.4982900-05:00 0HLI1S1O1IJOJ:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:53.4992901-05:00 0HLI1S1O1IJOI:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:53.5022902-05:00 0HLI1S1O1IJOI:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:56.4404583-05:00 0HLI1S1O1IJOJ:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:56.4424584-05:00 0HLI1S1O1IJOJ:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:56.4434585-05:00 0HLI1S1O1IJOI:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:35:56.4454586-05:00 0HLI1S1O1IJOI:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:36:33.6075841-05:00 0HLI1S1O1IJOJ:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:36:33.6105843-05:00 0HLI1S1O1IJOI:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:36:33.6145845-05:00 0HLI1S1O1IJOI:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-11-04T20:45:47.7731594-05:00 0HLI2O0HES2KI:00000002 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2018-11-04T20:45:47.7731594-05:00 0HLI2O0HES2KJ:00000002 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was invalid." (48071232)
+2018-11-04T20:45:47.8043594-05:00 0HLI2O0HES2KJ:00000002 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-11-04T20:45:47.8043594-05:00 0HLI2O0HES2KI:00000002 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-11-04T20:45:47.8667595-05:00 0HLI2O0HES2KJ:00000003 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"grant_type\": \"refresh_token\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-11-04T20:45:47.8823596-05:00 0HLI2O0HES2KJ:00000003 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-11-04T20:45:47.9135596-05:00 0HLI2O0HES2KJ:00000003 [INF] The token request was successfully validated. (d7e51e65)
+2018-11-04T20:45:47.9291596-05:00 0HLI2O0HES2KJ:00000003 [ERR] The token request was rejected because the authorization code or the refresh token was invalid. (4f68f9ee)
+2018-11-04T20:45:47.9291596-05:00 0HLI2O0HES2KJ:00000003 [INF] The token response was successfully returned: "{
+  \"error\": \"invalid_grant\",
+  \"error_description\": \"The specified refresh token is invalid.\"
+}". (12d98310)
+2018-11-04T20:45:51.6585663-05:00 0HLI2O0HES2KI:00000003 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-11-04T20:45:51.6585663-05:00 0HLI2O0HES2KI:00000003 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-11-04T20:45:51.6585663-05:00 0HLI2O0HES2KI:00000003 [INF] The token request was successfully validated. (d7e51e65)
+2018-11-04T20:45:51.6741663-05:00 0HLI2O0HES2KI:00000003 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-11-04T20:45:52.0173669-05:00 0HLI2O0HES2KI:00000003 [INF] An ad hoc authorization was automatically created and associated with an unknown application: "bf2b4430-204f-4439-8d7b-e157dfa95deb". (b5fe4ad7)
+2018-11-04T20:45:52.0329669-05:00 0HLI2O0HES2KI:00000003 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2018-11-04T20:45:52.0485669-05:00 0HLI2O0HES2KI:00000003 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2018-11-04T20:45:52.0485669-05:00 0HLI2O0HES2KI:00000003 [DBG] '"configuration"' was excluded from the access token claims. (ed8f369e)
+2018-11-04T20:45:52.0485669-05:00 0HLI2O0HES2KI:00000003 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2018-11-04T20:45:52.0485669-05:00 0HLI2O0HES2KI:00000003 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2018-11-04T20:45:52.1109670-05:00 0HLI2O0HES2KI:00000003 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2018-11-04T20:45:52.1265671-05:00 0HLI2O0HES2KI:00000003 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-11-04T20:46:08.5377959-05:00 0HLI2O0HES2KJ:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)

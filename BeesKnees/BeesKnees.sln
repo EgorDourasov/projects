@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9858A066-D732-40FB-BF41-52D33AD48393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeesKnees", "BeesKnees\BeesKnees\BeesKnees.csproj", "{5ED074B5-7223-49E6-AE1F-EE34E667B75A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "BeesKnees\DAL\DAL.csproj", "{F04065B0-51BB-4E8E-AE8D-1EE79A93B3BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ED074B5-7223-49E6-AE1F-EE34E667B75A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED074B5-7223-49E6-AE1F-EE34E667B75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED074B5-7223-49E6-AE1F-EE34E667B75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED074B5-7223-49E6-AE1F-EE34E667B75A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04065B0-51BB-4E8E-AE8D-1EE79A93B3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04065B0-51BB-4E8E-AE8D-1EE79A93B3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04065B0-51BB-4E8E-AE8D-1EE79A93B3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04065B0-51BB-4E8E-AE8D-1EE79A93B3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5ED074B5-7223-49E6-AE1F-EE34E667B75A} = {9858A066-D732-40FB-BF41-52D33AD48393}
+		{F04065B0-51BB-4E8E-AE8D-1EE79A93B3BF} = {9858A066-D732-40FB-BF41-52D33AD48393}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94F47920-4B28-4167-95B8-83BAF5800377}
+	EndGlobalSection
+EndGlobal
