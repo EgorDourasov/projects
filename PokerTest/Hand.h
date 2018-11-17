@@ -30,27 +30,29 @@ public:
 };
 
 
-//Base Hand Class
-class Hand  {
-	list<Card> _cards;
-	string _name;
-public:
-	Hand(string name, list<Card>& cards);
-	~Hand() {}
-
-	list<Card>& getCards() { return _cards; }
-	string& getName() { return _name; }
-};
-
-
-class Board  {
+class Board {
 	list<Card> _cards;
 public:
-	Board(list<Card> cards);
+	Board(list<Card>& cards);
 	~Board() {}
 
 	list<Card>& getCards() { return _cards; }
 };
+
+//Base Hand Class
+class Hand {
+	string _name;
+	list<Card> _cards;
+public:
+	Hand(string name, list<Card>& cards);
+	~Hand() {}
+
+	string& getName() { return _name; }
+	list<Card>& getCards() { return _cards; }
+};
+
+
+
 
 class Combination  {
 	list<Card> _highHand;
@@ -112,5 +114,5 @@ enum HighHandRank {
 };
 
 //helpers
-
+//std::ostream& operator<<(std::ostream& os, const Board& ip);
 Table* readTable(std::ifstream& ifs);
