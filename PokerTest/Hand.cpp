@@ -7,7 +7,7 @@ Board::Board()
 	
 }
 
-Board::Board(list<Card>& cards)
+Board::Board(vector<Card> cards)
 {
 	_cards = cards;
 }
@@ -17,7 +17,7 @@ Hand::Hand()
 {
 }
 
-Hand::Hand(string name, list<Card>& cards)
+Hand::Hand(string name, vector<Card> cards)
 {
 	_name = name;
 	_cards = cards;
@@ -137,7 +137,7 @@ Table& FileToTableReader::readCurrentLineToTable()
 	column = 0;
 	string name = "";
 	string cardString = "";
-	list<Card> cards = list<Card>{};
+	vector<Card> cards = vector<Card>{};
 	Board board{};
 	list<Hand> hands = list<Hand>{};
 	char suit = ' ';
@@ -156,7 +156,7 @@ Table& FileToTableReader::readCurrentLineToTable()
 		string token;
 		while ((pos = cardString.find(_cardDelimiter)) != string::npos) {
 			token = cardString.substr(0, pos);
-			cards.emplace_front(Card(token[0], token[1]));
+			cards.push_back(Card(token[0], token[1]));
 			cardString.erase(0, pos + 1);
 		}
 
@@ -202,11 +202,219 @@ Table::Table(Board & board, list<Hand>& hands)
 
 }
 
+//Hard to unit test - need to refactor
+void Combination::compareAndSet(vector<Card> newHand)
+{
+	bool cont = true;
+	HighHandRank newRank;
+
+	//First - figure out the highest rank
+	if (cont && isStraightFlush(newHand) ){
+		newRank = StraightFlush;
+		cont = false;
+	}
+	if (cont && isFourOfAKind(newHand)) {
+		newRank = FourOfAKind;
+		cont = false;
+	}
+	if (cont && isFullHouse(newHand)) {
+		newRank = FullHouse;
+		cont = false;
+	}
+	if (cont && isFlush(newHand)) {
+		newRank = Flush;
+		cont = false;
+	}
+	if (cont && isStraight(newHand)) {
+		newRank = Straight;
+		cont = false;
+	}
+	if (cont && isThreeOfAKind(newHand)) {
+		newRank = ThreeOfAKind;
+		cont = false;
+	}
+	if (cont && isTwoPair(newHand)) {
+		newRank = TwoPair;
+		cont = false;
+	}
+	if (cont && isOnePair(newHand) ){
+		newRank = OnePair;
+		cont = false;
+	}
+	if (cont && isHighCard(newHand)) {
+		newRank = HighCard;
+		cont = false;
+	}
+	
+	//Second - compare to existing
+	if (isTheHighBetterThan(newHand, newRank) == Lose) {
+		_highHand = newHand;
+		_highRank = newRank;
+	}
+	
+	//Check if this is a low hand, and if it's better than existing
+	if (isLowHand(newHand)) {
+		if (isTheLowBetterThan(newHand) == Lose) {
+			_lowHand = newHand;
+			_hasLowHand = true;
+		}
+	}
+}
+
 Combination::Combination(Hand & hand, Board & board)
 {
 	_hand = hand;
 	_board = board;
+	vector<Card> currentCombo = {};
 
+	//Board has 10 possible combinations of 3 cards
+	//Hand has 6 possible combinations of 2 cards
+	//Making a loop to iterate through all 60 possible combination
+
+	//The ugly loop-in-a-loop-in-a-loop-in-a-loop-in-a-loop :)
+	for (int i = 0; i <= 2; i++) { //Board card 1
+		for (int j = i + 1; j <= 3; j++) { //Board card 2
+			for (int k = j + 1; k <= 4; k++) { //Board card 3
+				for (int m = 0; m <= 2; m++) { //Hand card 1
+					for (int z = m + 1; z <= 3; z++) { //Hand card 2
+						currentCombo.clear();
+						currentCombo.push_back(hand.getCards()[z]);
+						currentCombo.push_back(hand.getCards()[m]);
+						currentCombo.push_back(hand.getCards()[k]);
+						currentCombo.push_back(hand.getCards()[j]);
+						currentCombo.push_back(hand.getCards()[i]);
+
+						compareAndSet(currentCombo);
+
+					}
+				}
+			}
+		}
+	}
+
+}
+
+Comparison Combination::isTheHighBetterThan(vector<Card> opponentHand, HighHandRank opponentRank)
+{
+	Comparison result = Tie;
+
+	if (_highRank > opponentRank) {
+		result = Win;
+	}
+	else if (_highRank < opponentRank){
+		result = Lose;
+	}
+	else if (_highRank == opponentRank) {
+
+	}
+	
+	return result;
+}
+
+Comparison Combination::isTheLowBetterThan(vector<Card> opponentHand)
+{
+	Comparison result = Tie;
+	int highestOpponentRank = 0;
+	int highestOwnRank = 0;
+
+	for (auto &card : _lowHand) {
+		if (card.getRank() > highestOwnRank) {
+			highestOwnRank = card.getRank();
+		}
+	}
+	for (auto &card : opponentHand) {
+		if (card.getRank() > highestOpponentRank) {
+			highestOpponentRank = card.getRank();
+		}
+	}
+
+	if (highestOpponentRank <= 8 && highestOpponentRank < highestOwnRank) {
+		result = Lose;
+	}
+	else if (highestOwnRank <= 8 && highestOwnRank < highestOpponentRank) {
+		result = Win;
+	}
+	else if (highestOwnRank <= 8 && highestOwnRank == highestOpponentRank) {
+		result = Tie;
+	}
+
+
+	return result;
+}
+
+Comparison Combination::straightTieBreaker(vector<Card> opponentHand)
+{
+	Comparison result = Tie;
+	int highestHighAceOpponentRank = 0;
+	int highestLowAceOpponentRank = 0;
+
+	int highestHighAceOwnRank = 0;
+	int highestLowAceOwnRank = 0;
+
+	for (auto &card : _lowHand) {
+		if (card.getRank() > highestHighAceOwnRank) {
+			highestHighAceOwnRank = card.getRank();
+			if (!card.isAce()) {
+				highestLowAceOwnRank = card.getRank();
+			}
+		}
+	}
+	for (auto &card : opponentHand) {
+		if (card.getRank() > highestHighAceOpponentRank) {
+			highestHighAceOpponentRank = card.getRank();
+			if (!card.isAce()) {
+				highestLowAceOpponentRank = card.getRank();
+			}
+		}
+	}
+
+	if (highestLowAceOwnRank < highestLowAceOpponentRank) {
+		result = Lose;
+	}
+	else if (highestLowAceOwnRank > highestLowAceOpponentRank) {
+		result = Win;
+	}
+	else if (highestLowAceOwnRank == highestLowAceOpponentRank) {
+		result = Tie;
+	}
+
+	
+	return Comparison();
+}
+
+Comparison Combination::fourOfAKindTieBreaker(vector<Card> opponentHand)
+{
+	return Comparison();
+}
+
+Comparison Combination::fullHouseTieBreaker(vector<Card> opponentHand)
+{
+	return Comparison();
+}
+
+Comparison Combination::flushTieBreaker(vector<Card> opponentHand)
+{
+	return Comparison();
+}
+
+Comparison Combination::threeOfAKindTieBreaker(vector<Card> opponentHand)
+{
+	return Comparison();
+}
+
+Comparison Combination::twoPairTieBreaker(vector<Card> opponentHand)
+{
+	return Comparison();
+}
+
+Comparison Combination::onePairTieBreaker(vector<Card> opponentHand)
+{
+	return Comparison();
+}
+
+Comparison Combination::highCardTieBreaker(vector<Card> opponentHand)
+{
+	return Comparison();
 }
 
 void Card::setRank(char rank)
@@ -292,3 +500,233 @@ Card::Card(char rank, char suit)
 	setSuit(suit);
 	setRank(rank);
 }
+
+bool isFlush(vector<Card> cards)
+{
+	bool result = true;
+	Suit suit = cards[0].getSuit();
+	for (auto &card : cards) {
+		if (card.getSuit() != suit) {
+			result = false;
+		}
+	}
+	return result;
+}
+
+bool isStraight(vector<Card> cards)
+{
+	bool highAceResult = true;
+	bool lowAceResult = true;
+	bool finalResult = false;
+	vector<int> highRankAceRow = {};
+	vector<int> lowRankAceRow = {};
+	int vectorSize = 0;
+
+	//if there is no ace, or it's the highest rank
+	for (auto &card : cards) {
+		if (card.isAce()) {
+			lowRankAceRow.push_back(1);
+		}
+		else {
+			highRankAceRow.push_back(card.getRank());
+		}
+		vectorSize++;
+	}
+	sort(highRankAceRow.rbegin(), highRankAceRow.rend());
+	sort(lowRankAceRow.rbegin(), lowRankAceRow.rend());
+	for (int i = 0; i < vectorSize - 1; i++) {
+		if (abs(highRankAceRow[i] - highRankAceRow[i + 1]) != 1) {
+			highAceResult = false;
+		}
+		if (abs(lowRankAceRow[i] - lowRankAceRow[i + 1]) != 1) {
+			lowAceResult = false;
+		}
+	}
+
+	if (highAceResult || lowAceResult) {
+		finalResult = true;
+	}
+
+	return finalResult;
+}
+
+bool isStraightFlush(vector<Card> hand)
+{
+	bool result = false;
+	if (isFlush(hand) && isStraight(hand)) {
+		result = true;
+	}
+	return result;
+}
+
+bool isFourOfAKind(vector<Card> hand)
+{
+	bool result = false;
+	map<int, int> mapOfCardCounts;
+	for (auto &card : hand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 4) {
+			result = true;
+		}
+	}
+	return result;
+}
+
+bool isFullHouse(vector<Card> hand)
+{
+	bool result = false;
+	map<int, int> mapOfCardCounts;
+	int cardNumber = 0;
+	for (auto &card : hand) {
+		cardNumber++;
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if ((mapOfCardCounts[card.getRank()] == 3 || mapOfCardCounts[card.getRank()] == 2) 
+			&& mapOfCardCounts.count == 2 && cardNumber == 5) {
+			result = true;
+		}
+		
+	}
+	return result;
+}
+
+bool isTwoPair(vector<Card> hand)
+{
+	bool result = false;
+	map<int, int> mapOfCardCounts;
+	int cardNumber = 0;
+	for (auto &card : hand) {
+		cardNumber++;
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if ((mapOfCardCounts[card.getRank()] == 2 )
+			&& mapOfCardCounts.count == 3 && cardNumber == 5) {
+			result = true;
+		}
+
+	}
+	return result;
+}
+
+bool isThreeOfAKind(vector<Card> hand)
+{
+	bool result = false;
+	map<int, int> mapOfCardCounts;
+	for (auto &card : hand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 3 && mapOfCardCounts.count == 3) {
+			result = true;
+		}
+	}
+	return result;
+}
+
+bool isOnePair(vector<Card> hand)
+{
+	bool result = false;
+	map<int, int> mapOfCardCounts;
+	for (auto &card : hand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 2 && mapOfCardCounts.count == 4) {
+			result = true;
+		}
+	}
+	return result;
+}
+
+bool isHighCard(vector<Card> hand)
+{
+	bool result = false;
+	map<int, int> mapOfCardCounts;
+	for (auto &card : hand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 1 && mapOfCardCounts.count == 5) {
+			result = true;
+		}
+	}
+	return result;
+}
+
+bool isLowHand(vector<Card> hand)
+{
+	bool result = true;
+
+	map<int, int> mapOfCardCounts;
+	for (auto &card : hand) {
+		int cardRank = card.getRank();
+		if (card.isAce()) {
+			cardRank = 1;
+		}
+		
+		if (mapOfCardCounts.find(cardRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(cardRank, 1);
+		}
+		else
+		{
+			mapOfCardCounts[cardRank]++;
+
+		}
+
+		if (cardRank > 8) {
+			result = false;
+		}
+
+	}
+
+	if (mapOfCardCounts.count != 5) {
+		result = false;
+	}
+
+
+
+
+	return result;
+}
+
+
+
+
+
+
+
+

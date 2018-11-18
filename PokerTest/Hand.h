@@ -6,6 +6,7 @@
 #include <vector>
 #include <array>
 #include <list>
+#include <map>
 #include <iomanip>
 using namespace std;
 
@@ -55,49 +56,65 @@ public:
 
 
 class Board {
-	list<Card> _cards = {};
+	vector<Card> _cards = {};
 public:
 	Board();
-	Board(list<Card>& cards);
+	Board(vector<Card> cards);
 	~Board() {}
 
-	list<Card>& getCards() { return _cards; }
+	vector<Card>& getCards() { return _cards; }
 };
 
 //Base Hand Class
 class Hand {
 	string _name = "";
-	list<Card> _cards = {};
+	vector<Card> _cards = {};
 public:
 	Hand();
-	Hand(string name, list<Card>& cards);
+	Hand(string name, vector<Card> cards);
 	~Hand() {}
 
 	string& getName() { return _name; }
-	list<Card>& getCards() { return _cards; }
+	vector<Card> getCards() { return _cards; }
 };
 
 
 
 
 class Combination  {
-	list<Card> _highHand;
-	list<Card> _lowHand;
-	bool _hasLowHand;
-	Hand _hand;
-	Board _board;
-	HighHandRank _highRank;
+	vector<Card> _highHand = {};
+	vector<Card> _lowHand = {};
+	bool _hasLowHand = false;
+	Hand _hand = {};
+	Board _board = {};
+	HighHandRank _highRank = HighCard;
+
+
+	void compareAndSet(vector<Card> newHand);
+
 
 public: 
 	Combination(Hand& hand, Board& board);
 	~Combination() {}
 
-	list<Card> getHighHand() { return _highHand; }
-	list<Card> getLowHand() { return _lowHand; }
+	vector<Card> getHighHand() { return _highHand; }
+	vector<Card> getLowHand() { return _lowHand; }
 	bool hasLowHand() { return _hasLowHand; }
 
 	string& getStringifiedHighRank();
 	string& getStgringifiedLowSequence();
+
+	Comparison isTheHighBetterThan(vector<Card> opponentHand, HighHandRank opponentRank);
+	Comparison isTheLowBetterThan(vector<Card> opponentHand);
+
+	Comparison straightTieBreaker(vector<Card> opponentHand);
+	Comparison fourOfAKindTieBreaker(vector<Card> opponentHand);
+	Comparison fullHouseTieBreaker(vector<Card> opponentHand);
+	Comparison flushTieBreaker(vector<Card> opponentHand);
+	Comparison threeOfAKindTieBreaker(vector<Card> opponentHand);
+	Comparison twoPairTieBreaker(vector<Card> opponentHand);
+	Comparison onePairTieBreaker(vector<Card> opponentHand);
+	Comparison highCardTieBreaker(vector<Card> opponentHand);
 
 };
 
@@ -140,6 +157,26 @@ enum HighHandRank {
 
 };
 
+enum Comparison {
+	Win,
+	Lose,
+	Tie
+};
+
 //helpers
 //std::ostream& operator<<(std::ostream& os, const Board& ip);
 //Table* readTable(std::ifstream& ifs);
+
+
+bool isFlush(vector<Card> hand);
+bool isStraight(vector<Card> hand);
+bool isStraightFlush(vector<Card> hand);
+bool isFourOfAKind(vector<Card> hand);
+bool isFullHouse(vector<Card> hand);
+bool isThreeOfAKind(vector<Card> hand);
+bool isTwoPair(vector<Card> hand);
+bool isOnePair(vector<Card> hand);
+bool isHighCard(vector<Card> hand);
+bool isLowHand(vector<Card> hand);
+
+
