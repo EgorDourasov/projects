@@ -4,10 +4,11 @@
 
 Board::Board()
 {
-	
+	vector<Card> cards = vector<Card>{};
+	_cards = cards;
 }
 
-Board::Board(vector<Card> cards)
+Board::Board(vector<Card>& cards)
 {
 	_cards = cards;
 }
@@ -15,9 +16,11 @@ Board::Board(vector<Card> cards)
 
 Hand::Hand()
 {
+	_name = "";
+	_cards = vector<Card>{};
 }
 
-Hand::Hand(string name, vector<Card> cards)
+Hand::Hand(string& name, vector<Card>& cards)
 {
 	_name = name;
 	_cards = cards;
@@ -84,6 +87,10 @@ Hand::Hand(string name, vector<Card> cards)
 //	return prod;
 //}
 
+FileToTableReader::FileToTableReader()
+{
+}
+
 FileToTableReader::FileToTableReader(std::ifstream & ifs)
 {
 	
@@ -105,11 +112,11 @@ bool FileToTableReader::nextLine() {
 	_lineCount++;
 }
 
-Table& FileToTableReader::readCurrentLineToTable()
+Table FileToTableReader::readCurrentLineToTable()
 {
 	
-	vector<string> columnData;
-	string field;
+	vector<string> columnData = {};
+	string field = "";
 	int fieldCount = 0;
 
 	//Step 1: This part parses the line and puts the Hands and the Board into a vector of strings
@@ -379,42 +386,340 @@ Comparison Combination::straightTieBreaker(vector<Card> opponentHand)
 	}
 
 	
-	return Comparison();
+	return result;
 }
 
 Comparison Combination::fourOfAKindTieBreaker(vector<Card> opponentHand)
 {
-	return Comparison();
+	Comparison result = Tie;
+	int ownRankOfFour = 0;
+	int ownRankOfOne = 0;
+	int opponentRankOfFour = 0;
+	int opponentRankOfOne = 0;
+	map<int, int> mapOfCardCounts;
+	for (auto &card : opponentHand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 4) {
+			opponentRankOfFour = card.getRank();
+		}
+		if (mapOfCardCounts.count == 5 && mapOfCardCounts[card.getRank()] == 1) {
+			opponentRankOfOne = card.getRank();
+		}
+	}
+	mapOfCardCounts.clear();
+	mapOfCardCounts = {};
+	for (auto &card : _highHand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 4) {
+			ownRankOfFour = card.getRank();
+		}
+		if (mapOfCardCounts.count == 5 && mapOfCardCounts[card.getRank()] == 1) {
+			ownRankOfOne = card.getRank();
+		}
+	}
+
+	if (ownRankOfFour > opponentRankOfFour) {
+		result = Win;
+	}
+	else if (ownRankOfFour < opponentRankOfFour) {
+		result = Lose;
+	}
+	else if (ownRankOfFour == opponentRankOfFour) {
+		if (ownRankOfOne > opponentRankOfOne) {
+			result = Win;
+		}
+		else if (ownRankOfOne < opponentRankOfOne) {
+			result = Lose;
+		}
+		else if (ownRankOfOne == opponentRankOfOne)
+		{
+			result = Tie;
+		}
+		
+	}
+
+	return result;
 }
 
 Comparison Combination::fullHouseTieBreaker(vector<Card> opponentHand)
 {
-	return Comparison();
+	Comparison result = Tie;
+	int ownRankOfThree = 0;
+	int ownRankOfTwo = 0;
+	int opponentRankOfThree = 0;
+	int opponentRankOfTwo = 0;
+	map<int, int> mapOfCardCounts;
+	for (auto &card : opponentHand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 2) {
+			opponentRankOfTwo = card.getRank();
+		}
+		if (mapOfCardCounts[card.getRank()] == 3) {
+			opponentRankOfThree = card.getRank();
+		}
+		
+	}
+	mapOfCardCounts.clear();
+	mapOfCardCounts = {};
+	for (auto &card : _highHand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 2) {
+			ownRankOfTwo = card.getRank();
+		}
+		if (mapOfCardCounts[card.getRank()] == 3) {
+			ownRankOfThree = card.getRank();
+		}
+	
+	}
+
+	if (ownRankOfThree > opponentRankOfThree) {
+		result = Win;
+	}
+	else if (ownRankOfThree < opponentRankOfThree) {
+		result = Lose;
+	}
+	else if (ownRankOfThree == opponentRankOfThree) {
+		if (ownRankOfTwo > opponentRankOfTwo) {
+			result = Win;
+		}
+		else if (ownRankOfTwo < opponentRankOfTwo) {
+			result = Lose;
+		}
+		else if (ownRankOfTwo == opponentRankOfTwo)
+		{
+			result = Tie;
+		}
+
+	}
+
+	return result;
 }
 
 Comparison Combination::flushTieBreaker(vector<Card> opponentHand)
 {
-	return Comparison();
+	Comparison result = Tie;
+	int opponentHighRank = 0;
+	int ownHighRank = 0;
+
+	for (auto &card : _highHand) {
+		if (card.getRank() > ownHighRank) {
+			ownHighRank = card.getRank();
+		}
+	}
+
+	for (auto &card : opponentHand) {
+		if (card.getRank() > opponentHighRank) {
+			opponentHighRank = card.getRank();
+		}
+	}
+
+	if (ownHighRank > opponentHighRank) {
+		result = Win;
+	}
+	else if (ownHighRank < opponentHighRank) {
+		result = Lose;
+	}
+	else if (ownHighRank == opponentHighRank) {
+		result = Tie;
+	}
+
+
+	return result;
 }
 
 Comparison Combination::threeOfAKindTieBreaker(vector<Card> opponentHand)
 {
-	return Comparison();
+	Comparison result = Tie;
+	int rankOfOwnThree = 0;
+	int rankOfOpponentThree = 0;
+	map<int, int> mapOfCardCounts;
+	for (auto &card : _highHand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 3) {
+			rankOfOwnThree = card.getRank();
+		}
+	}
+
+	mapOfCardCounts.clear();
+	mapOfCardCounts = {};
+
+	for (auto &card : opponentHand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 2) {
+			rankOfOpponentThree = card.getRank();
+		}
+	}
+
+	if (rankOfOwnThree > rankOfOpponentThree) {
+		result = Win;
+	}
+	else if (rankOfOwnThree < rankOfOpponentThree) {
+		result = Lose;
+	}
+	else if (rankOfOwnThree == rankOfOpponentThree) {
+		result = Tie;
+	}
+
+	return result;
 }
 
 Comparison Combination::twoPairTieBreaker(vector<Card> opponentHand)
 {
-	return Comparison();
+	Comparison result = Tie;
+	int ownHighestPairRank = 0;
+	int opponentHighestPairRank = 0;
+
+	map<int, int> mapOfCardCounts;
+	int cardNumber = 0;
+
+
+	for (auto &card : _highHand) {
+		cardNumber++;
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+	}
+	for (auto &map : mapOfCardCounts) {
+		if (map.second == 2 && map.first > ownHighestPairRank) {
+			ownHighestPairRank = map.first;
+		}
+	}
+	mapOfCardCounts.clear();
+	mapOfCardCounts = {};
+
+	for (auto &card : opponentHand) {
+		cardNumber++;
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+	}
+	for (auto &map : mapOfCardCounts) {
+		if (map.second == 2 && map.first > opponentHighestPairRank) {
+			opponentHighestPairRank = map.first;
+		}
+	}
+
+	if (ownHighestPairRank > opponentHighestPairRank) {
+		result = Win;
+	}
+	else if (ownHighestPairRank < opponentHighestPairRank) {
+		result = Lose;
+	}
+	else if (ownHighestPairRank == opponentHighestPairRank) {
+		result = Tie;
+	}
+
+
+
+
+	return result;
 }
 
 Comparison Combination::onePairTieBreaker(vector<Card> opponentHand)
 {
-	return Comparison();
+	Comparison result = Tie;
+	int rankOfOwnPair = 0;
+	int rankOfOpponentPair = 0;
+	map<int, int> mapOfCardCounts;
+	for (auto &card : _highHand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 2) {
+			rankOfOwnPair = card.getRank();
+		}
+	}
+
+	mapOfCardCounts.clear();
+	mapOfCardCounts = {};
+
+	for (auto &card : opponentHand) {
+		if (mapOfCardCounts.find(card.getRank) == mapOfCardCounts.end()) {
+			mapOfCardCounts.insert(card.getRank(), 1);
+		}
+		else
+		{
+			mapOfCardCounts[card.getRank()]++;
+
+		}
+		if (mapOfCardCounts[card.getRank()] == 2) {
+			rankOfOpponentPair = card.getRank();
+		}
+	}
+
+	if (rankOfOwnPair > rankOfOpponentPair) {
+		result = Win;
+	}
+	else if (rankOfOwnPair < rankOfOpponentPair) {
+		result = Lose;
+	}
+	else if (rankOfOwnPair == rankOfOpponentPair) {
+		result = Tie;
+	}
+
+	return result;
 }
 
 Comparison Combination::highCardTieBreaker(vector<Card> opponentHand)
 {
-	return Comparison();
+	return flushTieBreaker(opponentHand);
 }
 
 void Card::setRank(char rank)
@@ -618,11 +923,11 @@ bool isTwoPair(vector<Card> hand)
 			mapOfCardCounts[card.getRank()]++;
 
 		}
-		if ((mapOfCardCounts[card.getRank()] == 2 )
-			&& mapOfCardCounts.count == 3 && cardNumber == 5) {
+	}
+	for (auto &map : mapOfCardCounts) {
+		if (map.second == 2 && mapOfCardCounts.count == 3 && cardNumber == 5) {
 			result = true;
 		}
-
 	}
 	return result;
 }
@@ -640,7 +945,10 @@ bool isThreeOfAKind(vector<Card> hand)
 			mapOfCardCounts[card.getRank()]++;
 
 		}
-		if (mapOfCardCounts[card.getRank()] == 3 && mapOfCardCounts.count == 3) {
+		
+	}
+	for (auto &map : mapOfCardCounts) {
+		if (map.second == 3 && mapOfCardCounts.count == 3) {
 			result = true;
 		}
 	}
@@ -660,7 +968,10 @@ bool isOnePair(vector<Card> hand)
 			mapOfCardCounts[card.getRank()]++;
 
 		}
-		if (mapOfCardCounts[card.getRank()] == 2 && mapOfCardCounts.count == 4) {
+	
+	}
+	for (auto &map : mapOfCardCounts) {
+		if (map.second == 2 && mapOfCardCounts.count == 4) {
 			result = true;
 		}
 	}

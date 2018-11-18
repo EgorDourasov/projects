@@ -13,17 +13,18 @@ using namespace std;
 class FileToTableReader {
 	std::ifstream* _ifs;
 	
-	int _lineCount;
+	int _lineCount = 0;
 	
-	string _currentLine;
+	string& _currentLine;
 	char _stackDelimiter = ' ';
 	char _endOfNameDelimiter = ':';
 	char _cardDelimiter = '-';
 	
 public:
+	FileToTableReader();
 	FileToTableReader(std::ifstream& ifs);
-	~FileToTableReader() {}
-	void display();
+	~FileToTableReader() {};
+	//void display();
 	
 	bool nextLine();
 	Table& readCurrentLineToTable();
@@ -32,23 +33,23 @@ public:
 
 //Represents the table that the session is being played on
 class Table {
-	Board _board;
-	list<Hand> _hands;
-	list<Combination> _combinations;
-	bool _anyLowHandsExist;
-	bool _tableIsReady;
+	Board& _board;
+	list<Hand>& _hands;
+	list<Combination>& _combinations;
+	bool _anyLowHandsExist = false;
+	bool _tableIsReady = false;
 
 public:
 	Table();
 	Table(Board& board, list<Hand>& hands);
 	~Table() {}
 
-	void setBoard(Board& board);
+	/*void setBoard(Board& board);
 	void addHand(Hand& hand);
-	void addHands(list<Hand>& hands);
+	void addHands(list<Hand>& hands);*/
 
-	Combination& determineHighWinner(list<Combination>& combinations);
-	Combination& determineLowWinner(list<Combination>& combinations);
+//	Combination determineHighWinner(list<Combination>& combinations);
+//Combination determineLowWinner(list<Combination>& combinations);
 
 	bool anyLowHandsExist() { return _anyLowHandsExist; }
 
@@ -56,7 +57,7 @@ public:
 
 
 class Board {
-	vector<Card> _cards = {};
+	vector<Card>& _cards;
 public:
 	Board();
 	Board(vector<Card> cards);
@@ -67,8 +68,8 @@ public:
 
 //Base Hand Class
 class Hand {
-	string _name = "";
-	vector<Card> _cards = {};
+	string& _name;
+	vector<Card>& _cards;
 public:
 	Hand();
 	Hand(string name, vector<Card> cards);
@@ -82,11 +83,11 @@ public:
 
 
 class Combination  {
-	vector<Card> _highHand = {};
-	vector<Card> _lowHand = {};
+	vector<Card>& _highHand;
+	vector<Card>& _lowHand;
 	bool _hasLowHand = false;
-	Hand _hand = {};
-	Board _board = {};
+	Hand& _hand;
+	Board& _board;
 	HighHandRank _highRank = HighCard;
 
 
@@ -97,32 +98,32 @@ public:
 	Combination(Hand& hand, Board& board);
 	~Combination() {}
 
-	vector<Card> getHighHand() { return _highHand; }
-	vector<Card> getLowHand() { return _lowHand; }
+	vector<Card>& getHighHand() { return _highHand; }
+	vector<Card>& getLowHand() { return _lowHand; }
 	bool hasLowHand() { return _hasLowHand; }
 
 	string& getStringifiedHighRank();
 	string& getStgringifiedLowSequence();
 
-	Comparison isTheHighBetterThan(vector<Card> opponentHand, HighHandRank opponentRank);
-	Comparison isTheLowBetterThan(vector<Card> opponentHand);
+	Comparison isTheHighBetterThan(vector<Card>& opponentHand, HighHandRank opponentRank);
+	Comparison isTheLowBetterThan(vector<Card>& opponentHand);
 
-	Comparison straightTieBreaker(vector<Card> opponentHand);
-	Comparison fourOfAKindTieBreaker(vector<Card> opponentHand);
-	Comparison fullHouseTieBreaker(vector<Card> opponentHand);
-	Comparison flushTieBreaker(vector<Card> opponentHand);
-	Comparison threeOfAKindTieBreaker(vector<Card> opponentHand);
-	Comparison twoPairTieBreaker(vector<Card> opponentHand);
-	Comparison onePairTieBreaker(vector<Card> opponentHand);
-	Comparison highCardTieBreaker(vector<Card> opponentHand);
+	Comparison straightTieBreaker(vector<Card>& opponentHand);
+	Comparison fourOfAKindTieBreaker(vector<Card>& opponentHand);
+	Comparison fullHouseTieBreaker(vector<Card>& opponentHand);
+	Comparison flushTieBreaker(vector<Card>& opponentHand);
+	Comparison threeOfAKindTieBreaker(vector<Card>& opponentHand);
+	Comparison twoPairTieBreaker(vector<Card>& opponentHand);
+	Comparison onePairTieBreaker(vector<Card>& opponentHand);
+	Comparison highCardTieBreaker(vector<Card>& opponentHand);
 
 };
 
 class Card {
 	Suit _suit;
-	char _rankName;
-	int _rank;
-	bool _isAce;
+	char _rankName = ' ';
+	int _rank = 0;
+	bool _isAce = false;
 
 	void setRank(char rank);
 	void setSuit(char suit);
@@ -164,19 +165,15 @@ enum Comparison {
 };
 
 //helpers
-//std::ostream& operator<<(std::ostream& os, const Board& ip);
-//Table* readTable(std::ifstream& ifs);
-
-
-bool isFlush(vector<Card> hand);
-bool isStraight(vector<Card> hand);
-bool isStraightFlush(vector<Card> hand);
-bool isFourOfAKind(vector<Card> hand);
-bool isFullHouse(vector<Card> hand);
-bool isThreeOfAKind(vector<Card> hand);
-bool isTwoPair(vector<Card> hand);
-bool isOnePair(vector<Card> hand);
-bool isHighCard(vector<Card> hand);
-bool isLowHand(vector<Card> hand);
+bool isFlush(vector<Card>& hand);
+bool isStraight(vector<Card>& hand);
+bool isStraightFlush(vector<Card>& hand);
+bool isFourOfAKind(vector<Card>& hand);
+bool isFullHouse(vector<Card>& hand);
+bool isThreeOfAKind(vector<Card>& hand);
+bool isTwoPair(vector<Card>& hand);
+bool isOnePair(vector<Card>& hand);
+bool isHighCard(vector<Card>& hand);
+bool isLowHand(vector<Card>& hand);
 
 
