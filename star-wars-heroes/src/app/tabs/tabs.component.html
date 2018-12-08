@@ -1,8 +1,8 @@
 <div>
   <ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a (click)="onChoose('all')" style="cursor: pointer">All</a></li>
-    <li role="presentation"><a (click)="onChoose('light')" style="cursor: pointer">Light</a></li>
-    <li role="presentation"><a (click)="onChoose('dark')" style="cursor: pointer">Dark</a></li>
+    <li role="presentation" [ngClass]="{active : chosenList === 'all'? true : false}"><a (click)="onChoose('all')" style="cursor: pointer">All</a></li>
+    <li role="presentation" [ngClass]="{active : chosenList === 'light'? true : false}"><a (click)="onChoose('light')" style="cursor: pointer">Light</a></li>
+    <li role="presentation" [ngClass]="{active : chosenList === 'dark'? true : false}"><a (click)="onChoose('dark')" style="cursor: pointer">Dark</a></li>
   </ul>
-  <app-list [characters]="getCharacters()"></app-list>
+  <app-list [characters]="getCharacters()" (sideAssigned)="onSideChosen($event)"></app-list>
 </div>

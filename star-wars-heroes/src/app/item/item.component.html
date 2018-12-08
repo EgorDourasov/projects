@@ -1,9 +1,9 @@
-<div>
-  <a href="#" class="list-group-item active">
-    <h4 class="list-group-item-heading">{{ caracter.name }} </h4>
-    <div>
-      <button class ="btn btn-primary">Light</button>
-      <button class ="btn btn-danger">Dark</button>
+<div [ngStyle]="{backgroundColor: iColor % 2 === 0 ? 'white' : 'gray'}">
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading" >{{ character.name }} </h4>
+    <div class="btn-group" role="group" aria-label="...">
+      <button (click)="onAssign('light')" class="btn btn-default" [ngClass]="{'btn-primary' : character.side === 'light'? true : false}">Light</button>
+      <button (click)="onAssign('dark')" class="btn btn-default" [ngClass]="{'btn-danger' : character.side === 'dark'? true : false}">Dark</button>
     </div>
   </a>
 </div>
