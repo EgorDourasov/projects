@@ -13,6 +13,8 @@ export class CreateCharacterComponent implements OnInit {
 
   swService: StarWarsService;
 
+  defaultName = "Obi-Wan";
+
   constructor(swService: StarWarsService) {
     this.swService = swService;
    }
