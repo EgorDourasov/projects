@@ -2,7 +2,6 @@
   <div class="list-group" >
     <app-item 
       *ngFor="let char of characters; let i = index" 
-      [character]="char" 
-      [iColor]="i"
-      (sideAssigned)="onSideAssigned($event)"></app-item>
+      [character]="char" >
+    </app-item>
   </div>
