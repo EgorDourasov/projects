@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+<form (ngSubmit)="onSubmit(form)" #form="ngForm" >
   <div class="form-group">
     <label for="name">Character Name</label>
     <input type="text" 
@@ -18,5 +18,5 @@
       </option>
     </select>
   </div>
-  <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Add Character</button>
+  <button class="btn btn-primary" type="submit" [disabled]="form.invalid" >Add Character</button>
 </form>

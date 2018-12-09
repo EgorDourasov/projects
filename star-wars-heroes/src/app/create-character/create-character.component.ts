@@ -28,6 +28,7 @@ export class CreateCharacterComponent implements OnInit {
     }
     console.log(submittedForm);
     this.swService.addCharacter(submittedForm.value.name, submittedForm.value.side);
+    
   }
 
 }
