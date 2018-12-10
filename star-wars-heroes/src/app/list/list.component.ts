@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit,  OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StarWarsService } from '../star-wars.service';
 
@@ -20,6 +20,7 @@ export class ListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
     this.activatedRoute.params.subscribe(
       (params) => {
         this.characters = this.swService.getCharacters(params.side);
