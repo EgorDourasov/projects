@@ -1,0 +1,9 @@
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\bin\Release\netstandard2.0\DAL.deps.json
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\bin\Release\netstandard2.0\DAL.dll
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\bin\Release\netstandard2.0\DAL.pdb
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Release\netstandard2.0\DAL.csprojAssemblyReference.cache
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Release\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Release\netstandard2.0\DAL.AssemblyInfoInputs.cache
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Release\netstandard2.0\DAL.AssemblyInfo.cs
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Release\netstandard2.0\DAL.dll
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Release\netstandard2.0\DAL.pdb

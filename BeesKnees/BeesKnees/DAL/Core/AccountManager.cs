@@ -1,10 +1,10 @@
 ﻿// ====================================================
-// More Templates: https://www.ebenmonney.com/templates
-// Email: support@ebenmonney.com
+//
+// 
 // ====================================================
 
-// ==> Get QuickApp PREMIUM TEMPLATES
-// ==> https://www.ebenmonney.com/shop
+// 
+// 
 // ====================================
 
 using DAL;

@@ -1,0 +1,576 @@
+2018-12-29T00:42:28.2806378-05:00 0HLJDA0CUU9DG:00000001 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-12-29T00:42:28.3116288-05:00 0HLJDA0CUU9DG:00000001 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-12-29T00:42:28.3133962-05:00 0HLJDA0CUU9DG:00000001 [INF] The token request was successfully validated. (d7e51e65)
+2018-12-29T00:42:28.3241892-05:00 0HLJDA0CUU9DG:00000001 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-12-29T00:42:28.7399585-05:00 0HLJDA0CUU9DG:00000001 [INF] An ad hoc authorization was automatically created and associated with an unknown application: "72fae37f-6efe-434b-b18c-161022dea892". (b5fe4ad7)
+2018-12-29T00:42:28.7663178-05:00 0HLJDA0CUU9DG:00000001 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T00:42:28.7676505-05:00 0HLJDA0CUU9DG:00000001 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T00:42:28.7688739-05:00 0HLJDA0CUU9DG:00000001 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T00:42:28.7701721-05:00 0HLJDA0CUU9DG:00000001 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T00:42:28.8733311-05:00 0HLJDA0CUU9DG:00000001 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2018-12-29T00:42:28.8914469-05:00 0HLJDA0CUU9DG:00000001 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-12-29T00:43:22.0111298-05:00 0HLJDA0CUU9DH:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:43:22.0111298-05:00 0HLJDA0CUU9DG:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:18.0046724-05:00 0HLJDA0CUU9DG:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:18.0052859-05:00 0HLJDA0CUU9DH:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:18.0067301-05:00 0HLJDA0CUU9DG:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:21.7575032-05:00 0HLJDA0CUU9DG:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:21.7591998-05:00 0HLJDA0CUU9DG:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:21.7641238-05:00 0HLJDA0CUU9DH:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:21.7656630-05:00 0HLJDA0CUU9DH:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:22.7571667-05:00 0HLJDA0CUU9DG:00000007 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:22.7608292-05:00 0HLJDA0CUU9DG:00000007 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:22.7629939-05:00 0HLJDA0CUU9DH:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:22.7647876-05:00 0HLJDA0CUU9DH:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:23.9023253-05:00 0HLJDA0CUU9DG:00000008 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:23.9030216-05:00 0HLJDA0CUU9DH:00000007 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T00:44:23.9065547-05:00 0HLJDA0CUU9DH:00000007 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:21:02.9641121-05:00 0HLJDAMOPQBPL:00000002 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-12-29T01:21:02.9871146-05:00 0HLJDAMOPQBPL:00000002 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-12-29T01:21:02.9885421-05:00 0HLJDAMOPQBPL:00000002 [INF] The token request was successfully validated. (d7e51e65)
+2018-12-29T01:21:02.9961285-05:00 0HLJDAMOPQBPL:00000002 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-12-29T01:21:03.4157986-05:00 0HLJDAMOPQBPL:00000002 [INF] An ad hoc authorization was automatically created and associated with an unknown application: "ed732b8c-5a7c-487f-9017-3213ff89caa4". (b5fe4ad7)
+2018-12-29T01:21:03.4349586-05:00 0HLJDAMOPQBPL:00000002 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T01:21:03.4361716-05:00 0HLJDAMOPQBPL:00000002 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T01:21:03.4372161-05:00 0HLJDAMOPQBPL:00000002 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T01:21:03.4382603-05:00 0HLJDAMOPQBPL:00000002 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T01:21:03.5152003-05:00 0HLJDAMOPQBPL:00000002 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2018-12-29T01:21:03.5317376-05:00 0HLJDAMOPQBPL:00000002 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-12-29T01:41:03.7719223-05:00 0HLJDB23KHU30:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:03.7719223-05:00 0HLJDB23KHU2V:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:09.8529161-05:00 0HLJDB23KHU30:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:09.8556479-05:00 0HLJDB23KHU30:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:09.8583763-05:00 0HLJDB23KHU2V:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:09.8602201-05:00 0HLJDB23KHU2V:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:34.1721469-05:00 0HLJDB23KHU2V:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:34.3929028-05:00 0HLJDB23KHU2V:00000007 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"grant_type\": \"refresh_token\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-12-29T01:41:34.4100622-05:00 0HLJDB23KHU2V:00000007 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-12-29T01:41:34.4115818-05:00 0HLJDB23KHU2V:00000007 [INF] The token request was successfully validated. (d7e51e65)
+2018-12-29T01:41:34.5753754-05:00 0HLJDB23KHU2V:00000007 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-12-29T01:41:34.5915711-05:00 0HLJDB23KHU2V:00000007 [DBG] AuthenticationScheme: "ASOS" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:34.7021340-05:00 0HLJDB23KHU2V:00000007 [INF] The expiration date of the refresh token '"d1f6da04-6551-435f-b8ae-392f346b6710"' was automatically updated: 01/12/2019 06:41:34 +00:00. (3e1903c1)
+2018-12-29T01:41:34.7184384-05:00 0HLJDB23KHU2V:00000007 [DBG] The access token scopes will be limited to the scopes requested by the client application: "openid, email, phone, profile, offline_access, roles". (da314d7b)
+2018-12-29T01:41:34.7300541-05:00 0HLJDB23KHU2V:00000007 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T01:41:34.7317083-05:00 0HLJDB23KHU2V:00000007 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T01:41:34.7330693-05:00 0HLJDB23KHU2V:00000007 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T01:41:34.7342855-05:00 0HLJDB23KHU2V:00000007 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T01:41:34.7583493-05:00 0HLJDB23KHU2V:00000007 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2018-12-29T01:41:34.7753565-05:00 0HLJDB23KHU2V:00000007 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-12-29T01:41:34.7915310-05:00 0HLJDB23KHU30:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:34.7928096-05:00 0HLJDB23KHU30:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T01:41:34.7975603-05:00 0HLJDB23KHU2V:00000008 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T02:10:45.9275994-05:00 0HLJDBIOM0IUG:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T02:10:45.9276020-05:00 0HLJDBIOM0IUI:00000002 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T02:10:49.4376073-05:00 0HLJDBIOM0IUI:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T02:10:49.4443397-05:00 0HLJDBIOM0IUG:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T02:10:49.4465711-05:00 0HLJDBIOM0IUG:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T02:53:27.8624535-05:00 0HLJDCAH0PEPE:00000004 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-12-29T02:53:27.8624535-05:00 0HLJDCAH0PEPD:00000003 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-12-29T02:53:27.8980159-05:00 0HLJDCAH0PEPD:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-12-29T02:53:27.8980159-05:00 0HLJDCAH0PEPE:00000004 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-12-29T02:53:27.9547139-05:00 0HLJDCAH0PEPB:00000004 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"grant_type\": \"refresh_token\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-12-29T02:53:27.9726991-05:00 0HLJDCAH0PEPB:00000004 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-12-29T02:53:27.9740374-05:00 0HLJDCAH0PEPB:00000004 [INF] The token request was successfully validated. (d7e51e65)
+2018-12-29T02:53:28.0902164-05:00 0HLJDCAH0PEPB:00000004 [ERR] Failed executing DbCommand ("2"ms) [Parameters=["@__identifier='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [token].[Id], [token].[ApplicationId], [token].[AuthorizationId], [token].[ConcurrencyToken], [token].[CreationDate], [token].[ExpirationDate], [token].[Payload], [token].[Properties], [token].[ReferenceId], [token].[Status], [token].[Subject], [token].[Type], [token.Authorization].[Id], [token.Authorization].[ApplicationId], [token.Authorization].[ConcurrencyToken], [token.Authorization].[Properties], [token.Authorization].[Scopes], [token.Authorization].[Status], [token.Authorization].[Subject], [token.Authorization].[Type], [token.Application].[Id], [token.Application].[ClientId], [token.Application].[ClientSecret], [token.Application].[ConcurrencyToken], [token.Application].[ConsentType], [token.Application].[DisplayName], [token.Application].[Permissions], [token.Application].[PostLogoutRedirectUris], [token.Application].[Properties], [token.Application].[RedirectUris], [token.Application].[Type]
+FROM [OpenIddictTokens] AS [token]
+LEFT JOIN [OpenIddictAuthorizations] AS [token.Authorization] ON [token].[AuthorizationId] = [token.Authorization].[Id]
+LEFT JOIN [OpenIddictApplications] AS [token.Application] ON [token].[ApplicationId] = [token.Application].[Id]
+WHERE [token].[Id] = @__identifier" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'OpenIddictTokens'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16
+2018-12-29T02:53:28.1335361-05:00 0HLJDCAH0PEPB:00000004 [ERR] An exception occurred in the database while iterating the results of a query for context type '"DAL.ApplicationDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'OpenIddictTokens'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16" (64e2593c)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'OpenIddictTokens'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16
+2018-12-29T02:53:28.1714885-05:00 0HLJDCAH0PEPB:00000004 [ERR] An exception occurred in the database while iterating the results of a query for context type '"DAL.ApplicationDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'OpenIddictTokens'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16" (64e2593c)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'OpenIddictTokens'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.FindByIdAsync(String identifier, CancellationToken cancellationToken)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16
+2018-12-29T02:53:28.2060846-05:00 0HLJDCAH0PEPB:00000004 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'OpenIddictTokens'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at OpenIddict.Core.OpenIddictTokenManager`1.OpenIddict.Abstractions.IOpenIddictTokenManager.FindByIdAsync(String identifier, CancellationToken cancellationToken)
+   at OpenIddict.Server.OpenIddictServerProvider.ReceiveTokenAsync(String type, String value, OpenIddictServerOptions options, OpenIdConnectRequest request, ISecureDataFormat`1 format)
+   at OpenIddict.Server.OpenIddictServerProvider.DeserializeRefreshToken(DeserializeRefreshTokenContext context)
+   at AspNet.Security.OpenIdConnect.Server.OpenIdConnectServerHandler.DeserializeRefreshTokenAsync(String token, OpenIdConnectRequest request)
+   at AspNet.Security.OpenIdConnect.Server.OpenIdConnectServerHandler.InvokeTokenEndpointAsync()
+   at AspNet.Security.OpenIdConnect.Server.OpenIdConnectServerHandler.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16
+2018-12-29T02:53:44.5993986-05:00 0HLJDCAH0PEPF:00000003 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-12-29T02:53:44.6018100-05:00 0HLJDCAH0PEPF:00000003 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-12-29T02:53:44.6032539-05:00 0HLJDCAH0PEPF:00000003 [INF] The token request was successfully validated. (d7e51e65)
+2018-12-29T02:53:44.6131287-05:00 0HLJDCAH0PEPF:00000003 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-12-29T02:53:44.6619312-05:00 0HLJDCAH0PEPF:00000003 [ERR] Failed executing DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16
+2018-12-29T02:53:44.6944137-05:00 0HLJDCAH0PEPF:00000003 [ERR] An exception occurred in the database while iterating the results of a query for context type '"DAL.ApplicationDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16" (64e2593c)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16
+2018-12-29T02:53:44.7241711-05:00 0HLJDCAH0PEPF:00000003 [ERR] An exception occurred in the database while iterating the results of a query for context type '"DAL.ApplicationDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16" (64e2593c)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16
+2018-12-29T02:53:44.8013118-05:00 0HLJDCAH0PEPF:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByEmailAsync(String email)
+   at BeesKnees.Controllers.AuthorizationController.Exchange(OpenIdConnectRequest request) in E:\Projects\projects\BeesKnees\BeesKnees\BeesKnees\Controllers\AuthorizationController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:7ede9325-dc32-4e75-943d-ef1177b2c83c
+Error Number:208,State:1,Class:16
+2018-12-29T02:57:54.5499980-05:00 0HLJDCD0QJR5S:00000002 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-12-29T02:57:54.5801012-05:00 0HLJDCD0QJR5S:00000002 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-12-29T02:57:54.5815924-05:00 0HLJDCD0QJR5S:00000002 [INF] The token request was successfully validated. (d7e51e65)
+2018-12-29T02:57:54.5905536-05:00 0HLJDCD0QJR5S:00000002 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-12-29T02:57:54.6975489-05:00 0HLJDCD0QJR5S:00000002 [ERR] Failed executing DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Configuration], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[IsEnabled], [u].[JobTitle], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:3af5b128-5432-4ab3-b026-dda8ad306d7f
+Error Number:208,State:1,Class:16
+2018-12-29T02:57:54.7390437-05:00 0HLJDCD0QJR5S:00000002 [ERR] An exception occurred in the database while iterating the results of a query for context type '"DAL.ApplicationDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:3af5b128-5432-4ab3-b026-dda8ad306d7f
+Error Number:208,State:1,Class:16" (64e2593c)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:3af5b128-5432-4ab3-b026-dda8ad306d7f
+Error Number:208,State:1,Class:16
+2018-12-29T02:57:54.7656909-05:00 0HLJDCD0QJR5S:00000002 [ERR] An exception occurred in the database while iterating the results of a query for context type '"DAL.ApplicationDbContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:3af5b128-5432-4ab3-b026-dda8ad306d7f
+Error Number:208,State:1,Class:16" (64e2593c)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByEmailAsync(String email)
+ClientConnectionId:3af5b128-5432-4ab3-b026-dda8ad306d7f
+Error Number:208,State:1,Class:16
+2018-12-29T02:57:54.8407993-05:00 0HLJDCD0QJR5S:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByEmailAsync(String email)
+   at BeesKnees.Controllers.AuthorizationController.Exchange(OpenIdConnectRequest request) in E:\Projects\projects\BeesKnees\BeesKnees\BeesKnees\Controllers\AuthorizationController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:3af5b128-5432-4ab3-b026-dda8ad306d7f
+Error Number:208,State:1,Class:16
+2018-12-29T03:07:27.4885354-05:00 0HLJDCIF4B7AF:00000003 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-12-29T03:07:27.4885354-05:00 0HLJDCIF4B7AH:00000002 [INF] "Bearer" was not authenticated. Failure message: "Authentication failed because the access token was expired." (48071232)
+2018-12-29T03:07:27.5171787-05:00 0HLJDCIF4B7AF:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-12-29T03:07:27.5171787-05:00 0HLJDCIF4B7AH:00000002 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2018-12-29T03:07:27.5692483-05:00 0HLJDCIF4B7AF:00000004 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"grant_type\": \"refresh_token\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-12-29T03:07:27.5853737-05:00 0HLJDCIF4B7AF:00000004 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-12-29T03:07:27.5870914-05:00 0HLJDCIF4B7AF:00000004 [INF] The token request was successfully validated. (d7e51e65)
+2018-12-29T03:07:27.6878072-05:00 0HLJDCIF4B7AF:00000004 [INF] The token '"d1f6da04-6551-435f-b8ae-392f346b6710"' cannot be found in the database. (eb0ea00a)
+2018-12-29T03:07:27.6929075-05:00 0HLJDCIF4B7AF:00000004 [ERR] The token request was rejected because the authorization code or the refresh token was invalid. (4f68f9ee)
+2018-12-29T03:07:27.6998991-05:00 0HLJDCIF4B7AF:00000004 [INF] The token response was successfully returned: "{
+  \"error\": \"invalid_grant\",
+  \"error_description\": \"The specified refresh token is invalid.\"
+}". (12d98310)
+2018-12-29T03:07:45.6018366-05:00 0HLJDCIF4B7AF:00000005 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"username\": \"admin\",
+  \"password\": \"[removed for security reasons]\",
+  \"grant_type\": \"password\",
+  \"scope\": \"openid email phone profile offline_access roles\"
+}". (ebc01284)
+2018-12-29T03:07:45.6044587-05:00 0HLJDCIF4B7AF:00000005 [DBG] The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. (fcec36a0)
+2018-12-29T03:07:45.6066644-05:00 0HLJDCIF4B7AF:00000005 [INF] The token request was successfully validated. (d7e51e65)
+2018-12-29T03:07:45.6185347-05:00 0HLJDCIF4B7AF:00000005 [DBG] The default token request handling was skipped from user code. (72afae05)
+2018-12-29T03:07:45.8248533-05:00 0HLJDCIF4B7AF:00000005 [INF] An ad hoc authorization was automatically created and associated with an unknown application: "a5fe2f1d-c0ec-4afa-866a-e953520c431f". (b5fe4ad7)
+2018-12-29T03:07:45.8483641-05:00 0HLJDCIF4B7AF:00000005 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T03:07:45.8498860-05:00 0HLJDCIF4B7AF:00000005 [DBG] '"fullname"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T03:07:45.8513550-05:00 0HLJDCIF4B7AF:00000005 [DBG] '"email"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T03:07:45.8528887-05:00 0HLJDCIF4B7AF:00000005 [DBG] '"phone"' was excluded from the access token claims. (ed8f369e)
+2018-12-29T03:07:45.9345867-05:00 0HLJDCIF4B7AF:00000005 [DBG] '"AspNet.Identity.SecurityStamp"' was excluded from the identity token claims. (7dcd2335)
+2018-12-29T03:07:45.9476369-05:00 0HLJDCIF4B7AF:00000005 [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"id_token\": \"[removed for security reasons]\"
+}". (12d98310)
+2018-12-29T03:07:52.1894384-05:00 0HLJDCIF4B7AH:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:52.1924677-05:00 0HLJDCIF4B7AF:00000006 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:52.1933392-05:00 0HLJDCIF4B7AH:00000003 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:54.3825904-05:00 0HLJDCIF4B7AF:00000007 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:54.3842827-05:00 0HLJDCIF4B7AF:00000007 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:54.3908193-05:00 0HLJDCIF4B7AH:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:54.3924983-05:00 0HLJDCIF4B7AH:00000004 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:55.8322425-05:00 0HLJDCIF4B7AF:00000008 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:55.8343265-05:00 0HLJDCIF4B7AF:00000008 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:55.8362624-05:00 0HLJDCIF4B7AH:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)
+2018-12-29T03:07:55.8380143-05:00 0HLJDCIF4B7AH:00000005 [DBG] AuthenticationScheme: "Bearer" was successfully authenticated. (1805f3b3)

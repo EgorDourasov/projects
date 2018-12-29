@@ -1,6 +1,6 @@
 // ====================================================
-// More Templates: https://www.ebenmonney.com/templates
-// Email: support@ebenmonney.com
+//
+// 
 // ====================================================
 
 import { User } from './user.model';

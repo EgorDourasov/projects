@@ -1,15 +1,10 @@
-﻿// ====================================================
-// More Templates: https://www.ebenmonney.com/templates
-// Email: support@ebenmonney.com
-// ====================================================
-
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BeesKnees.Migrations
 {
-    public partial class Initial : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -391,9 +386,9 @@ namespace BeesKnees.Migrations
                 {
                     ApplicationId = table.Column<string>(nullable: true),
                     AuthorizationId = table.Column<string>(nullable: true),
+                    ConcurrencyToken = table.Column<string>(nullable: true),
                     CreationDate = table.Column<DateTimeOffset>(nullable: true),
                     ExpirationDate = table.Column<DateTimeOffset>(nullable: true),
-                    ConcurrencyToken = table.Column<string>(nullable: true),
                     Id = table.Column<string>(nullable: false),
                     Payload = table.Column<string>(nullable: true),
                     Properties = table.Column<string>(nullable: true),

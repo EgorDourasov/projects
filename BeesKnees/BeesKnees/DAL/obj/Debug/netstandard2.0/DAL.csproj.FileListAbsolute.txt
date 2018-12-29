@@ -16,3 +16,12 @@ F:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.Assemb
 F:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
 F:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.dll
 F:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.pdb
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\bin\Debug\netstandard2.0\DAL.dll
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\bin\Debug\netstandard2.0\DAL.pdb
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.dll
+E:\Projects\projects\BeesKnees\BeesKnees\DAL\obj\Debug\netstandard2.0\DAL.pdb

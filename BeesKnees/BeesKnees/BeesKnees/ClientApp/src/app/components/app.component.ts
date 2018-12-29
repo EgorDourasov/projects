@@ -1,6 +1,6 @@
 // ====================================================
-// More Templates: https://www.ebenmonney.com/templates
-// Email: support@ebenmonney.com
+//
+// 
 // ====================================================
 
 import { Component, ViewEncapsulation, OnInit, OnDestroy, ViewChildren, AfterViewInit, QueryList, ElementRef } from "@angular/core";

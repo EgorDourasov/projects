@@ -1,7 +1,7 @@
 /// <reference path="../../../node_modules/@types/jasmine/index.d.ts" />
 // ====================================================
-// More Templates: https://www.ebenmonney.com/templates
-// Email: support@ebenmonney.com
+//
+// 
 // ====================================================
 
 import { TestBed, async } from '@angular/core/testing';

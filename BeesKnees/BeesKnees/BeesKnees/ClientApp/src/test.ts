@@ -1,6 +1,6 @@
 // ====================================================
-// More Templates: https://www.ebenmonney.com/templates
-// Email: support@ebenmonney.com
+//
+// 
 // ====================================================
 
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
